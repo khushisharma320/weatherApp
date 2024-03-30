@@ -3,7 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 const app = express();
 const port = 8000;
-const serverless = require("serverless-http");
+
 
 // Public static path
 
@@ -37,9 +37,8 @@ app.get("*",(req,res)=>{
     });
 });
 
-// app.listen(port, ()=>{
-//     console.log(`Listening from the port ${port}`);
-// });
+app.listen(port, ()=>{
+    console.log(`Listening from the port ${port}`);
+});
 
 
-export const handler = serverless(app);
